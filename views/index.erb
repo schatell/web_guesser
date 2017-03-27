@@ -1,17 +1,23 @@
 <html>
-  <head></head>
+  <head>
+    <style>
+      body {
+        background: <%= relevant_color %>;
+      }
+    </style>
+  </head>
     <body>
-      <p>The SECRET NUMBER is <%= number %></p>
-          <form method="post">
-            <input type='submit' value='New Game!' />
-          </form>
-        <% if params["guess"] %>
+      <form method="post">
+        <input type='submit' value='New Game!' />
+      </form>
+      <% if params["guess"] %>
         <p>You guessed: <%= guess %></p>
-        <% end %>
-        <h1><%= message %></h1>
+      <% end %>
+      <h1><%= message %></h1>
       <form>
         <input type='text' name='guess' />
         <input type='submit' value='Guess!' />
       </form>
+      <p>You have <%= chance_left %> chances left</p>
     </body>
 </html>
